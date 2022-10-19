@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base3::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Dashboard</title>
+</head>
+<body>
+	<section class="banner">
+		<h1 class="text-center">This is Dashboard of </h1><h1  class="text-center"><span th:text="${user.firstName}"></span><span th:text="${user.lastName}"></span></h1>
+		<div class="container">	
+			<div class="card">
+				<div class="card-body">
+							<table class ="table text-center text-dark">
+						<tbody>
+							<tr>
+								<th scope="col">First Name</th>
+								<td><span th:text="${user.firstName}"></span></td>
+							</tr>
+							<tr>
+								<th scope="row">Last Name</th>
+								<td><span th:text="${user.lastName}"></span></td>
+							</tr>
+							<tr>
+								<th scope="row">Email</th>
+								<td><span th:text="${user.email}"></span></td>
+							</tr>
+							<tr>
+								<th scope="row">Phone no.</th>
+								<td><span th:text="${user.number}"></span></td>
+							</tr>
+						</tbody>
+					</table>
+					<form action="/user/update-form" method="post">
+						<button class="btn btn-primary btn-sm">Update</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
